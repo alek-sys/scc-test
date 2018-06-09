@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4",
+    "isomorphic-fetch": "2.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "3.5.1",
+    "wait-on": "2.1.0",
+    "node-fetch": "2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "integration-test": "concurrently -k -s first \"(cd ../backend/ && ./run-mocks.sh)\" \"wait-on tcp:8080 && CI=true react-scripts test integration\"",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8080"
+}
