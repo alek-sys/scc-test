@@ -67,9 +67,6 @@
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
                 <version>${spring-cloud-contract.version}</version>
                 <extensions>true</extensions>
-                <configuration>
-                    <stubsDirectory>${project.basedir}/wiremock</stubsDirectory>
-                </configuration>
             </plugin>
         </plugins>
     </build>

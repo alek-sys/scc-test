@@ -11,9 +11,8 @@ Contract.make {
     response {
         status OK()
         body([
-            ["name": "Fluffy Lizard"],
             ["name": "Sweety November"],
-            ["name": "Sugarmode"],
+            ["name": "Sugarbomb"],
             ["name": "Veryberry"],
         ])
         headers {
