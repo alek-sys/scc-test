@@ -5,5 +5,5 @@ global.fetch = ifetch;
 
 it('should fetch cakes from API', async () => {
   const cakes = await fetchCakes();
-  expect(cakes.length).toBe(4);
+  expect(cakes.length).toBe(3);
 });

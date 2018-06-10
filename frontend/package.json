@@ -16,8 +16,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "integration-test": "concurrently -k -s first \"(cd ../backend/ && ./run-mocks.sh)\" \"wait-on tcp:8080 && CI=true react-scripts test integration\"",
+    "test": "react-scripts test '^((?!integration).)*$' --env=jsdom",
+    "integration-test": "CI=true API_URL=http://localhost:8080 react-scripts test integration --env=jsdom",
+    "all-test": "CI=true API_URL=http://localhost:8080 react-scripts test --env=jsdom",
+    "run-mocks": "(cd ../backend/ && ./run-mocks.sh)",
+    "all-with-mocks": "concurrently -k -s first \"yarn run run-mocks\" \"wait-on tcp:8080 && yarn run all-test\"",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8080"
