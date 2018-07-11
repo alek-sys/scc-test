@@ -2,5 +2,15 @@
 
 ./generate-mocks.sh
 
-version=$(./mvnw -q -Dexec.executable="echo" -Dexec.args='${project.groupId}/${project.artifactId}/${project.version}' --non-recursive exec:exec | tail -n 1)
-java -jar wiremock.jar --root-dir=./target/stubs/META-INF/${version} --no-request-journal
+nc -z localhost 8080
+wiremock_running=$?
+
+if [ $wiremock_running ]
+then
+    echo "Refreshing wiremock"
+    curl -X POST http://localhost:8080/__admin/mappings/reset
+else
+    echo "Starting wiremock"
+    version=$(./mvnw -q -Dexec.executable="echo" -Dexec.args='${project.groupId}/${project.artifactId}/${project.version}' --non-recursive exec:exec | tail -n 1)
+    java -jar wiremock.jar --root-dir=./target/stubs/META-INF/${version} --no-request-journal &
+fi

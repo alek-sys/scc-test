@@ -11,9 +11,9 @@ Contract.make {
     response {
         status OK()
         body([
-            ["name": "Sweety November"],
-            ["name": "Sugarbomb"],
-            ["name": "Veryberry"],
+            ["name": "Curly Whirly"],
+            ["name": "Passion Fizz"],
+            ["name": "Red Velvet"],
         ])
         headers {
             contentType("application/json")

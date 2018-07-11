@@ -5,11 +5,7 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method "GET"
-        urlPath("/cake/1") {
-//            queryParameters {
-//                parameter 'limit': 100
-//            }
-        }
+        urlPath("/cake/1")
     }
 
     response {
