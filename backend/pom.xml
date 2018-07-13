@@ -72,6 +72,9 @@
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
                 <version>${spring-cloud-contract.version}</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <baseClassForTests>com.example.demo.DemoApplicationTests</baseClassForTests>
+                </configuration>
             </plugin>
         </plugins>
     </build>
