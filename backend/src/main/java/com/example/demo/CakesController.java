@@ -14,9 +14,11 @@ import java.util.Collection;
 public class CakesController {
 
     private CakesRepository cakesRepository;
+    private WarehouseClient warehouseClient;
 
-    public CakesController(CakesRepository cakesRepository) {
+    public CakesController(CakesRepository cakesRepository, WarehouseClient warehouseClient) {
         this.cakesRepository = cakesRepository;
+        this.warehouseClient = warehouseClient;
     }
 
     @GetMapping
@@ -25,10 +27,16 @@ public class CakesController {
     }
 
     @GetMapping("/{id}")
-    public HttpEntity<Cake> getCakeById(@PathVariable String id) {
+    public HttpEntity<CakeResponseModel> getCakeById(@PathVariable String id) {
         return cakesRepository
                 .findById(id)
+                .map(this::getResponseModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    private CakeResponseModel getResponseModel(Cake cake) {
+        Long inStock = this.warehouseClient.getQtyInStock(cake.getId().toString());
+        return new CakeResponseModel(cake.getName(), inStock);
     }
 }
