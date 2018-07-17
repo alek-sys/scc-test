@@ -12,7 +12,7 @@ import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;
+import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(secure = false)
 @AutoConfigureStubRunner(ids = "com.example:warehouse:+:stubs", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 public class DemoApplicationTests {
 
@@ -41,7 +41,7 @@ public class DemoApplicationTests {
 
         Cake cake = new Cake(cakeId,"Passion Fizz");
         cakesRepository.saveAll(
-                List.of(new Cake("Red Velvet"),new Cake("Curly Whirly"), cake)
+                Arrays.asList(new Cake("Red Velvet"), new Cake("Curly Whirly"), cake)
         );
     }
 
