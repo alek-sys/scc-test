@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@AutoConfigureStubRunner(ids = "com.example:warehouse:+:stubs:23231", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
+@AutoConfigureStubRunner(ids = "com.example:warehouse:+:stubs", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
 public class DemoApplicationTests {
 
     private final String cakeId = "5b48bb1aa873178c033a3c07";
