@@ -3,9 +3,9 @@
 ./generate-mocks.sh
 
 nc -z localhost 8080
-wiremock_running=$?
+CONNECT_TO_WIREMOCK=$?
 
-if [ $wiremock_running ]
+if [ ${CONNECT_TO_WIREMOCK} -eq 0 ]
 then
     echo "Refreshing wiremock"
     curl -X POST http://localhost:8080/__admin/mappings/reset
