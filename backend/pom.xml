@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>cakefactory</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>cakefactory</name>
+    <description>Sample project for Spring Cloud Contracts</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -106,7 +106,7 @@
                 <version>${spring-cloud-contract.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <baseClassForTests>com.example.demo.DemoApplicationTests</baseClassForTests>
+                    <baseClassForTests>com.example.cakefactory.CakefactoryApplicationTests</baseClassForTests>
                 </configuration>
             </plugin>
         </plugins>

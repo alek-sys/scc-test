@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

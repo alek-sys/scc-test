@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc(secure = false)
 @AutoConfigureStubRunner(ids = "com.example:warehouse:+:stubs", stubsMode = StubRunnerProperties.StubsMode.LOCAL)
-public class DemoApplicationTests {
+public class CakefactoryApplicationTests {
 
     private final String cakeId = "5b48bb1aa873178c033a3c07";
 

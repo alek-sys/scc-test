@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

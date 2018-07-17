@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;

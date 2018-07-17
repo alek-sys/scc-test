@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ class Initializer implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Cake cake = cakesRepository.save(new Cake("Red Velvet"));
         logger.info("Created new record with ID " + cake.id.toString());
     }
@@ -35,7 +35,7 @@ class Initializer implements CommandLineRunner {
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, SecurityFilterAutoConfiguration.class})
 @EnableDiscoveryClient
-public class DemoApplication {
+public class CakefactoryApplication {
 
     @Bean
     @LoadBalanced
@@ -44,6 +44,6 @@ public class DemoApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(CakefactoryApplication.class, args);
     }
 }

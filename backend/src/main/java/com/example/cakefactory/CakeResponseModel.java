@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.cakefactory;
 
 public class CakeResponseModel {
 
