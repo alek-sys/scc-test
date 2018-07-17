@@ -1,0 +1,7 @@
+---
+applications:
+- name: cakefactory-ui
+  memory: 64M
+  buildpack: staticfile_buildpack
+  instances: 1
+  path: ./build
