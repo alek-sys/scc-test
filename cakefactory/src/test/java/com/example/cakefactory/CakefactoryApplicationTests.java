@@ -51,7 +51,10 @@ public class CakefactoryApplicationTests {
     private void setupRestAssured() {
         mockMvc = MockMvcBuilders
                 .webAppContextSetup(this.context)
-                .apply(documentationConfiguration(restDocumentation))
+                .apply(documentationConfiguration(restDocumentation).uris()
+                        .withScheme("https")
+                        .withHost("cakefactory.pcfbeta.io")
+                        .withPort(443))
                 .build();
 
         RestAssuredMockMvc.mockMvc(mockMvc);
