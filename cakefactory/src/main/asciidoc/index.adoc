@@ -1,3 +1,7 @@
-# Welcome to Cakefactory API
+= Welcome to Cakefactory API
 
-operation::contract-verifier-test/validate_cake[]
+== Getting all available cakes
+operation::cake-service-test/validate_should-get-a-list-of-cakes[]
+
+== Getting cakes details and availability
+operation::cake-service-test/validate_should-get-cake-by-id[]
