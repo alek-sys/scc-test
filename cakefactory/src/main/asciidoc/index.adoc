@@ -1,0 +1,3 @@
+# Welcome to Cakefactory API
+
+operation::contract-verifier-test/validate_cake[]
