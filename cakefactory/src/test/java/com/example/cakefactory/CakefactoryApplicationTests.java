@@ -20,6 +20,7 @@ import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -54,7 +55,11 @@ public class CakefactoryApplicationTests {
                 .apply(documentationConfiguration(restDocumentation).uris()
                         .withScheme("https")
                         .withHost("cakefactory.pcfbeta.io")
-                        .withPort(443))
+                        .withPort(443)
+                        .and()
+                        .operationPreprocessors()
+                        .withResponseDefaults(prettyPrint())
+                        .withRequestDefaults(prettyPrint()))
                 .build();
 
         RestAssuredMockMvc.mockMvc(mockMvc);
