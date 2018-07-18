@@ -116,7 +116,7 @@
                 <version>${spring-cloud-contract.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <baseClassForTests>com.example.cakefactory.CakefactoryApplicationTests</baseClassForTests>
+                    <baseClassForTests>com.example.cakefactory.CakeFactoryApplicationTests</baseClassForTests>
                 </configuration>
             </plugin>
             <plugin>

@@ -1,4 +1,4 @@
-package contracts
+package contracts.CakeService
 
 import org.springframework.cloud.contract.spec.Contract
 

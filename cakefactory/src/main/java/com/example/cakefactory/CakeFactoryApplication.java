@@ -35,7 +35,7 @@ class Initializer implements CommandLineRunner {
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, SecurityFilterAutoConfiguration.class})
 @EnableDiscoveryClient
-public class CakefactoryApplication {
+public class CakeFactoryApplication {
 
     @Bean
     @LoadBalanced
@@ -44,6 +44,6 @@ public class CakefactoryApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(CakefactoryApplication.class, args);
+        SpringApplication.run(CakeFactoryApplication.class, args);
     }
 }
