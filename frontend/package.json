@@ -12,17 +12,18 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "isomorphic-fetch": "2.2.1",
     "node-fetch": "2.1.2",
-    "wait-on": "2.1.0"
+    "wait-on": "2.1.0",
+    "concurrently": "3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-with-mocks": "npm run run-mocks && wait-on tcp:8080 && npm run test",
-    "run-mocks": "(cd ../backend/ && ./run-mocks.sh)",
+    "test-with-mocks": "concurrently -k -s first \"npm run run-mocks\" \"wait-on tcp:8081 && API_URL=http://localhost:8081 CI=true npm run test\"",
+    "run-mocks": "./run-mocks.sh",
     "unit-tests": "react-scripts test '^((?!integration).)*$' --env=jsdom",
-    "integration-tests": "API_URL=http://localhost:8080 react-scripts test integration --env=jsdom",
+    "integration-tests": "API_URL=http://localhost:8081 react-scripts test integration --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8081"
 }
