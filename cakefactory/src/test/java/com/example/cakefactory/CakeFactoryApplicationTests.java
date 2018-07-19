@@ -60,10 +60,10 @@ public class CakeFactoryApplicationTests {
                         .operationPreprocessors()
                         .withResponseDefaults(prettyPrint())
                         .withRequestDefaults(prettyPrint()))
+                .alwaysDo(document("{class-name}/{method-name}"))
                 .build();
 
         RestAssuredMockMvc.mockMvc(mockMvc);
-        RestAssuredMockMvc.resultHandlers(document("{class-name}/{method-name}"));
     }
 
     private void setupRepository() {
