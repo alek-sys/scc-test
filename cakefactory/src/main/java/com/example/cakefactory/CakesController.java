@@ -4,7 +4,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
+import java.util.stream.Stream;
 
 @CrossOrigin
 @RestController
@@ -20,8 +20,11 @@ public class CakesController {
     }
 
     @GetMapping
-    public Collection<Cake> getCakes() {
-        return cakesRepository.findAll();
+    public Stream<CakeResponseModel> getCakes() {
+        return cakesRepository
+                .findAll()
+                .stream()
+                .map(this::getResponseModel);
     }
 
     @GetMapping("/{id}")

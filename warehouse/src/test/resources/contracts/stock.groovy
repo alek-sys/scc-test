@@ -5,7 +5,7 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method "GET"
-        urlPath "/stock/5b48bb1aa873178c033a3c07"
+        urlPath value(stub(regex("/stock/\\w+")), test("/stock/5b48bb1aa873178c033a3c07"))
     }
 
     response {
