@@ -1,7 +1,5 @@
 = Welcome to Cakefactory API
 
-== Getting all available cakes
-operation::cake-service-test/validate_should-get-a-list-of-cakes[]
+include::{snippets}/cake-service-test/validate_should-get-a-list-of-cakes/auto-section.adoc[]
 
-== Getting cakes details and availability
-operation::cake-service-test/validate_should-get-cake-by-id[]
+include::{snippets}/cake-service-test/validate_should-get-cake-by-id/auto-section.adoc[]
