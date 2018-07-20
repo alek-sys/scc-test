@@ -2,8 +2,6 @@
 /wiremock/
 !.mvn/wrapper/maven-wrapper.jar
 
-stub-runner.jar
-
 ### STS ###
 .apt_generated
 .classpath
