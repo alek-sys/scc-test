@@ -10,12 +10,9 @@ Contract.make {
 
     response {
         status OK()
-        body(["name": "Cake is a lie"])
-        bodyMatchers {
-            jsonPath('$.name', byRegex(".+"))
-        }
+        body(["name": anyNonEmptyString(), "qty": anyPositiveInt()])
         headers {
-            contentType("application/json")
+            contentType(applicationJson())
         }
     }
 }

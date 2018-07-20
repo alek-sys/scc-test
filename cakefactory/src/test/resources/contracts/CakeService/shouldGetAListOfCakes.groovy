@@ -11,12 +11,12 @@ Contract.make {
     response {
         status OK()
         body([
-            ["name": "Curly Whirly"],
-            ["name": "Passion Fizz"],
-            ["name": "Red Velvet"],
+            ["name": anyNonEmptyString(), "qty": anyPositiveInt()],
+            ["name": anyNonEmptyString(), "qty": anyPositiveInt()],
+            ["name": anyNonEmptyString(), "qty": anyPositiveInt()],
         ])
         headers {
-            contentType("application/json")
+            contentType(applicationJson())
         }
     }
 }
