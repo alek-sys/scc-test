@@ -25,5 +25,12 @@
     "integration-tests": "API_URL=http://localhost:8081 react-scripts test integration --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8081"
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8081",
+      "pathRewrite": {
+        "^/api": "/"
+      }
+    }
+  }
 }

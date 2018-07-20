@@ -1,4 +1,4 @@
-const baseUrl = process.env.API_URL || 'http://localhost:8081';
+import { baseUrl } from './config';
 
 export function fetchCakes() {
   return fetch(`${baseUrl}/cake`).then(r => r.json())
