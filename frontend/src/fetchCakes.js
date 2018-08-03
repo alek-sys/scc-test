@@ -1,5 +1,5 @@
 import { baseUrl } from './config';
 
-export function fetchCakes() {
-  return fetch(`${baseUrl}/cake`).then(r => r.json())
+export function fetchCakes(base = baseUrl) {
+  return fetch(`${base}/cake`).then(r => r.json())
 }
