@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-with-mocks": "concurrently -k -s first \"npm run run-mocks\" \"wait-on tcp:8081 && API_URL=http://localhost:8081 CI=true npm run test\"",
+    "test-with-mocks": "concurrently -k -s first \"npm run run-mocks\" \"wait-on tcp:8081 && REACT_APP_API_URL=http://localhost:8081 CI=true npm run test\"",
     "run-mocks": "./run-mocks.sh",
     "unit-tests": "react-scripts test '^((?!integration).)*$' --env=jsdom",
     "integration-tests": "API_URL=http://localhost:8081 react-scripts test integration --env=jsdom",
