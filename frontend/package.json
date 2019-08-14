@@ -11,7 +11,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "isomorphic-fetch": "2.2.1",
-    "node-fetch": "2.1.2",
+    "node-fetch": "2.6.0",
     "wait-on": "3.3.0",
     "concurrently": "3.6.0"
   },
