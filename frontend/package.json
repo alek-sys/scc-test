@@ -10,7 +10,7 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "isomorphic-fetch": "2.2.1",
+    "isomorphic-fetch": "3.0.0",
     "node-fetch": "2.6.0",
     "wait-on": "3.3.0",
     "concurrently": "5.0.0"
