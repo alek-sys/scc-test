@@ -13,7 +13,7 @@
     "isomorphic-fetch": "2.2.1",
     "node-fetch": "2.6.0",
     "wait-on": "3.3.0",
-    "concurrently": "5.0.0"
+    "concurrently": "6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
